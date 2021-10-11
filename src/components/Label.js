@@ -5,8 +5,10 @@ export function Label({ title, subtitle, description, weigth }) {
   return (
     <Container>
       <main>
-        <section>{ title }</section>
-        <section>{ subtitle }</section>
+        <section>
+          <Title>{ title }</Title>
+          <Subtitle>{ subtitle }</Subtitle>
+        </section>
         <aside>
           <FlavorImg />
         </aside>
@@ -28,6 +30,25 @@ const Container = styled.div`
 
   font-family: sans-serif;
   
+  main {
+    margin: 1rem 0rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  aside {
+    position: fixed;
+    right: 0;
+    margin-right: 2rem;
+  }
+
+  section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
   footer {
     display: flex;
     justify-content: space-between;
@@ -37,4 +58,15 @@ const Container = styled.div`
     font-weight: bold;
     padding: .25rem;
   }
+`
+
+const Title = styled.section`
+  font-weight: bold;
+  font-size: 2rem;
+`
+
+const Subtitle = styled.section`
+  font-weight: bold;
+  margin-top: -.25rem;
+  font-size: 1.5rem;
 `
