@@ -1,5 +1,5 @@
 export function FlavorImg(props) {
   return (
-    <img src="teste"/>
+    <img src="img/meat.svg" />
   )
 }
