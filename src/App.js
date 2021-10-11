@@ -1,4 +1,4 @@
-import { Label } from "./Label";
+import { Label } from "./components/Label";
 
 function App() {
   return (
