@@ -6,7 +6,8 @@ function App() {
       <Label title="Special Dog" 
               subtitle="Carne"
               description="Sabor Carne"
-              weigth="1KG" />
+              weigth="1KG"
+              color="#a64b00" />
     </div>
   );
 }

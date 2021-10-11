@@ -1,9 +1,9 @@
 import styled from "styled-components";
 import { FlavorImg } from "./FlavorImg";
 
-export function Label({ title, subtitle, description, weigth }) {
+export function Label({ title, subtitle, description, weigth, color }) {
   return (
-    <Container>
+    <Container color={ color }>
       <main>
         <section>
           <Title>{ title }</Title>
@@ -26,7 +26,8 @@ const Container = styled.div`
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  border: 5px dashed;
+  border: 5px dashed ${ ({ color }) => color? color : 'black' };
+  color: ${ ({ color }) => color? color : 'black' };
 
   font-family: sans-serif;
   
@@ -53,7 +54,8 @@ const Container = styled.div`
     display: flex;
     justify-content: space-between;
     width: 100%;
-    background: blue;
+    padding: 0 5px;
+    background: ${ ({ color }) => color? color : 'black' };
     color: white;
     font-weight: bold;
     padding: .25rem;
