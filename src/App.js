@@ -22,18 +22,26 @@ function App() {
       subtitle: "Raças Pequenas",
       description: "(Carne + Cereiais + Vegetais)",
       weigth: "1KG",
-      flavor: "meat"
+      flavor: "fish"
+    },
+    { 
+      title: "Golden",
+      subtitle: "Raças Pequenas",
+      description: "(Carne + Cereiais + Vegetais)",
+      weigth: "1KG",
+      flavor: "chicken"
     }
   ];
 
   return (
     <div>
-      { database.map(({ title, subtitle, description, weigth, flavor }) => (
-        <Label title={ title } 
-              subtitle={ subtitle }
-              description={ description }
-              weigth={ weigth }
-              flavor={ flavor } />
+      { database.map(({ title, subtitle, description, weigth, flavor }, index) => (
+        <Label key={ index }
+            title={ title } 
+            subtitle={ subtitle }
+            description={ description }
+            weigth={ weigth }
+            flavor={ flavor } />
       )) }
     </div>
   );

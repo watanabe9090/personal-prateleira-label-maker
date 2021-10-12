@@ -1,35 +1,13 @@
 import styled from "styled-components";
 import { FlavorImg } from "../FlavorImg";
-
-const flavors = [
-  { 
-    flavor: 'meat',
-    color: '#a64b00'
-  },
-  { 
-    flavor: 'vegetable',
-    color: '#008500'
-  },
-  { 
-    flavor: 'fish',
-    color: '#06266f'
-  },
-  { 
-    flavor: 'chicken',
-    color: '#ff6600'
-  },
-  {  
-    flavor: 'generic',
-    color: '#000000' 
-  }
-];
+import { getFlavor } from "../flavors/flavors";
 
 export const Label = ({ title, subtitle, description, weigth, flavor }) => {
 
-  const flavorColor = flavors.filter(f => f.flavor === flavor).map(f => f.color);
+  const { color } = getFlavor(flavor);
 
   return (
-    <Container color={ flavorColor }>
+    <Container color={ color }>
       <main>
         <section>
           <Title>{ title }</Title>
