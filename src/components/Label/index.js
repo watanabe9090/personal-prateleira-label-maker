@@ -1,6 +1,9 @@
 import styled from "styled-components";
+import { cmToPixels } from "../../utils/unitConversor";
 import { FlavorImg } from "../FlavorImg";
 import { getFlavor } from "../flavors/flavors";
+
+const EIGHT_CENTIMETERS = 8;
 
 export const Label = ({ title, subtitle, description, weigth, flavor }) => {
 
@@ -17,10 +20,10 @@ export const Label = ({ title, subtitle, description, weigth, flavor }) => {
           <FlavorImg flavor={ flavor } />
         </aside>
       </main>
-      <footer>
+      <Footer color={ color }>
         <div>{ description }</div>
         <div>{ weigth }</div>
-      </footer>
+      </Footer>
     </Container>
   )
 }
@@ -32,37 +35,30 @@ const Container = styled.div`
   align-items: center;
   border: 5px dashed ${ ({ color }) => color? color : 'black' };
   color: ${ ({ color }) => color? color : 'black' };
-
+  margin-bottom: 1rem;
+  width: ${ cmToPixels(EIGHT_CENTIMETERS) }px;
   font-family: sans-serif;
   
   main {
     margin: 1rem 0rem;
+    width: 100%;
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: space-between;
   }
 
   aside {
-    position: fixed;
+    position: absolute;
     right: 0;
-    margin-right: 2rem;
+    margin-right: .5rem;
   }
 
   section {
     display: flex;
     flex-direction: column;
     align-items: center;
-  }
-
-  footer {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-    padding: 0 5px;
-    background: ${ ({ color }) => color? color : 'black' };
-    color: white;
-    font-weight: bold;
-    padding: .25rem;
+    padding-left: .35rem;
   }
 `
 
@@ -76,3 +72,14 @@ const Subtitle = styled.section`
   margin-top: -.25rem;
   font-size: 1.5rem;
 `
+const Footer = styled.footer`
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0 1rem;
+  background: ${ ({ color }) => color? color : 'black' };
+  color: white;
+  font-weight: bold;
+  padding: .25rem;
+`
+
