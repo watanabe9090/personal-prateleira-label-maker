@@ -10,7 +10,7 @@ export function Label({ title, subtitle, description, weigth, color }) {
           <Subtitle>{ subtitle }</Subtitle>
         </section>
         <aside>
-          <FlavorImg />
+          <FlavorImg color={ color } />
         </aside>
       </main>
       <footer>
