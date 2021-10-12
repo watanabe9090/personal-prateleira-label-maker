@@ -1,25 +1,22 @@
 import styled from "styled-components";
-import { FlavorImg } from "./FlavorImg";
+import { FlavorImg } from "../FlavorImg";
 
-export function Label({ title, subtitle, description, weigth, color }) {
-  return (
-    <Container color={ color }>
-      <main>
-        <section>
-          <Title>{ title }</Title>
-          <Subtitle>{ subtitle }</Subtitle>
-        </section>
-        <aside>
-          <FlavorImg color={ color } />
-        </aside>
-      </main>
-      <footer>
-        <div>{ description }</div>
-        <div>{ weigth }</div>
-      </footer>
-    </Container>
-  )
-}
+export const Label = ({ title, subtitle, description, weigth, color }) =>
+  <Container color={ color }>
+    <main>
+      <section>
+        <Title>{ title }</Title>
+        <Subtitle>{ subtitle }</Subtitle>
+      </section>
+      <aside>
+        <FlavorImg color={ color } />
+      </aside>
+    </main>
+    <footer>
+      <div>{ description }</div>
+      <div>{ weigth }</div>
+    </footer>
+  </Container>
 
 const Container = styled.div`
   display: flex;
