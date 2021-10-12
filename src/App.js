@@ -8,32 +8,32 @@ function App() {
       subtitle: "Carne",
       description: "Sabor Carne",
       weigth: "1KG",
-      color: "#a64b00"
+      flavor: "meat"
     },
     { 
       title: "Special Dog",
       subtitle: "Vegetal",
       description: "Sabor Vegetal",
       weigth: "1KG",
-      color: "#a64b00"
+      flavor: "vegetable"
     },
     { 
       title: "Magnus Petit",
       subtitle: "Raças Pequenas",
       description: "(Carne + Cereiais + Vegetais)",
       weigth: "1KG",
-      color: "#a64b00"
+      flavor: "meat"
     }
   ];
 
   return (
     <div>
-      { database.map(({ title, subtitle, description, weigth, color }) => (
+      { database.map(({ title, subtitle, description, weigth, flavor }) => (
         <Label title={ title } 
               subtitle={ subtitle }
               description={ description }
               weigth={ weigth }
-              color={ color } />
+              flavor={ flavor } />
       )) }
     </div>
   );

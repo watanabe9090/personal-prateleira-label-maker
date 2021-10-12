@@ -1,22 +1,51 @@
 import styled from "styled-components";
 import { FlavorImg } from "../FlavorImg";
 
-export const Label = ({ title, subtitle, description, weigth, color }) =>
-  <Container color={ color }>
-    <main>
-      <section>
-        <Title>{ title }</Title>
-        <Subtitle>{ subtitle }</Subtitle>
-      </section>
-      <aside>
-        <FlavorImg color={ color } />
-      </aside>
-    </main>
-    <footer>
-      <div>{ description }</div>
-      <div>{ weigth }</div>
-    </footer>
-  </Container>
+const flavors = [
+  { 
+    flavor: 'meat',
+    color: '#a64b00'
+  },
+  { 
+    flavor: 'vegetable',
+    color: '#008500'
+  },
+  { 
+    flavor: 'fish',
+    color: '#06266f'
+  },
+  { 
+    flavor: 'chicken',
+    color: '#ff6600'
+  },
+  {  
+    flavor: 'generic',
+    color: '#000000' 
+  }
+];
+
+export const Label = ({ title, subtitle, description, weigth, flavor }) => {
+
+  const flavorColor = flavors.filter(f => f.flavor === flavor).map(f => f.color);
+
+  return (
+    <Container color={ flavorColor }>
+      <main>
+        <section>
+          <Title>{ title }</Title>
+          <Subtitle>{ subtitle }</Subtitle>
+        </section>
+        <aside>
+          <FlavorImg flavor={ flavor } />
+        </aside>
+      </main>
+      <footer>
+        <div>{ description }</div>
+        <div>{ weigth }</div>
+      </footer>
+    </Container>
+  )
+}
 
 const Container = styled.div`
   display: flex;
