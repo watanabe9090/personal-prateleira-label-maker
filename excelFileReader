@@ -1,0 +1,39 @@
+const readXlsxFile = require('read-excel-file/node')
+
+const schema = {
+  'title' : {
+    prop: 'title',
+    type: String
+  },
+  'subtitle': {
+    prop: 'subtitle',
+    type: String
+  },
+  'description': {
+    prop: 'description',
+    type: String,
+    required: true
+  },
+  'weigth': {
+    prop: 'weigth',
+    type: String
+  },
+  'flavor': {
+    prop: 'flavor',
+    type: String
+  }
+};
+
+
+// File path.
+/*
+readXlsxFile('C:\\Users\\yuri.watanabe\\Documents\\Development\\React\\personal-prateleira-label-maker\\src\\components\\onDevelopment\\test.xlsx', {schema}).then(({rows, errors}) => {
+  console.table(rows);
+  console.table(errors)
+})
+*/
+// File path.
+readXlsxFile('C:\\Users\\yuri.watanabe\\Documents\\Development\\React\\personal-prateleira-label-maker\\src\\components\\onDevelopment\\test.xlsx').then((rows) => {
+  console.log(rows)
+})
+
