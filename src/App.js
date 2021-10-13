@@ -1,49 +1,18 @@
-import { Label } from "./components/Label";
+import React, { useRef } from "react";
+import ReactToPrint from "react-to-print";
+import { LabelContainer } from "./container/LabelContainer";
 
 function App() {
 
-  const database = [
-    { 
-      title: "Special Dog",
-      subtitle: "Carne",
-      description: "Sabor Carne",
-      weigth: "1KG",
-      flavor: "meat"
-    },
-    { 
-      title: "Special Dog",
-      subtitle: "Vegetal",
-      description: "Sabor Vegetal",
-      weigth: "1KG",
-      flavor: "vegetable"
-    },
-    { 
-      title: "Magnus Petit",
-      subtitle: "Raças Pequenas",
-      description: "(Carne + Cereiais + Vegetais)",
-      weigth: "1KG",
-      flavor: "fish"
-    },
-    { 
-      title: "Golden",
-      subtitle: "Raças Pequenas",
-      description: "(Carne + Cereiais + Vegetais)",
-      weigth: "1KG",
-      flavor: "chicken"
-    }
-  ];
+  let componentRef = useRef();
 
   return (
-    <div>
-      { database.map(({ title, subtitle, description, weigth, flavor }, index) => (
-        <Label key={ index }
-            title={ title } 
-            subtitle={ subtitle }
-            description={ description }
-            weigth={ weigth }
-            flavor={ flavor } />
-      )) }
-    </div>
+    <>
+      <ReactToPrint 
+        trigger={() => { return <button>Print this out!</button> }}
+        content={() => componentRef }/>
+        <LabelContainer ref={ (el) => (componentRef = el) }/>
+    </>
   );
 }
 
