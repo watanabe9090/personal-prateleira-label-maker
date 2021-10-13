@@ -11,7 +11,7 @@ function App() {
       <ReactToPrint 
         trigger={() => { return <button>Print this out!</button> }}
         content={() => componentRef }/>
-        <LabelContainer ref={ (el) => (componentRef = el) }/>
+      <LabelContainer ref={ (el) => (componentRef = el) }/>
     </>
   );
 }

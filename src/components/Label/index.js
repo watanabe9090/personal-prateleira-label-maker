@@ -35,10 +35,11 @@ const Container = styled.div`
   align-items: center;
   border: 5px dashed ${ ({ color }) => color? color : 'black' };
   color: ${ ({ color }) => color? color : 'black' };
+  margin-top: 1rem;
   margin-bottom: 1rem;
   width: ${ cmToPixels(EIGHT_CENTIMETERS) }px;
   font-family: sans-serif;
-  
+  align-self: center;
   main {
     margin: 1rem 0rem;
     width: 100%;
